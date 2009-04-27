@@ -154,12 +154,4 @@ describe ActsAsFu do
     end
   end
   
-  describe "ActsAsFu.get_module" do
-    
-    it "returns Object when class isn't namespaced" do
-      ActsAsFu
-    end
-    
-  end
-  
 end
