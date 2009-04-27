@@ -36,10 +36,21 @@ module ActsAsFu
     Object.send(:remove_const, klass_name) rescue nil
 
     klass = Class.new(super_class)
-    Object.const_set(klass_name, klass)
+    set_class_constant(klass_name, klass)
 
     model_eval(klass, &block)
     klass
+  end
+  
+  def set_class_constant(klass_name, klass)
+    modules = klass_name.split('::')
+    if modules.size == 1
+      Object.const_set(klass_name, klass)
+    else
+      klass_const = modules.pop
+      namespaced_module = modules.join('::').constantize
+      namespaced_module.const_set(klass_const, klass)
+    end
   end
 
   def connect!

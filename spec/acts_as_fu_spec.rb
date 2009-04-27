@@ -26,6 +26,16 @@ describe ActsAsFu do
       
       klass.should == Person
     end
+    
+    it "returns a namespaced klass" do
+      module ::My; end
+      klass = build_model('my/people') do
+        string :name
+      end
+      
+      klass.should == My::Person
+    end
+    
   end
   
   describe "without building a model" do
@@ -143,4 +153,13 @@ describe ActsAsFu do
       ActsAsFu::Connection.log.should include("CREATE TABLE")
     end
   end
+  
+  describe "ActsAsFu.get_module" do
+    
+    it "returns Object when class isn't namespaced" do
+      ActsAsFu
+    end
+    
+  end
+  
 end
