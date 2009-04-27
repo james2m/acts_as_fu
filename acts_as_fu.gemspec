@@ -2,16 +2,16 @@
 
 Gem::Specification.new do |s|
   s.name = %q{acts_as_fu}
-  s.version = "0.0.4"
-
+  s.version = "0.0.5"
+  s.homepage = %q{http://github.com/james2m/acts_as_fu}
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Pat Nakajima"]
-  s.date = %q{2008-10-26}
+  s.date = %q{2009-04-27}
   s.email = %q{patnakajima@gmail.com}
   s.files = ["lib/acts_as_fu", "lib/acts-as-fu.rb", "lib/acts_as_fu/base.rb", "lib/acts_as_fu.rb"]
   s.has_rdoc = true
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.0}
+  s.rubygems_version = %q{1.3.1}
   s.summary = %q{Generate ActiveRecord models on the fly for your tests}
 
   if s.respond_to? :specification_version then
