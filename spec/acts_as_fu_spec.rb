@@ -30,10 +30,12 @@ describe ActsAsFu do
     it "returns a namespaced klass" do
       module ::My; end
       klass = build_model('my/people') do
+        set_table_name 'my_people'
         string :name
       end
       
       klass.should == My::Person
+      klass.table_name.should == 'my_people'
     end
     
   end
